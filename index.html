@@ -37,9 +37,8 @@
                         <button class="try-free">try for free</button>
                     </div>
                 </div>
-                <div class="video">
-                <!-- <img src="/images/video.jpg" alt=""> -->
-                <iframe class="ifryou" width="560" height="315" src="https://www.youtube.com/embed/Cuzbp02knKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-container">
+                    <video class="promo-video" src="video/Star-6962.mp4" preload="metadata" controls></video>
                 </div>
             </div>
         </div>
@@ -266,7 +265,7 @@
             <p class="block-7-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
         </div>
         <div class="form-container">
-            <form class="block-7__form" action="">
+            <form class="block-7__form" action="server">
                 <p class="form-p">
                     <input type="text" placeholder="First Name">
                     <input type="text" placeholder="Last Name">
@@ -281,7 +280,7 @@
                 <div class="form-p form-p-last">
                     <div>
                         <input type="checkbox" id="rb1" class="block-7__checkbox">
-                        <label id="rb1" class="form-span">subscribe to the newsletter</label>
+                        <label for="rb1" class="form-span">subscribe to the newsletter</label>
                     </div>
                     <button class="block-7__button">Send</button>
                 </div>

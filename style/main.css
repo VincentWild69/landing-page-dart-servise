@@ -58,27 +58,6 @@ img {
     }
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 52px;
-}
-
-@media screen and (max-width: 767px) {
-    header {
-        flex-wrap: wrap;
-    }
-}
-
-h1 {
-    font-size: 5.5rem;
-    line-height: 6.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #fff;
-}
-
 summary::-webkit-details-marker {
     display: none;
 }
@@ -106,6 +85,18 @@ summary {
     }
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 52px;
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        flex-wrap: wrap;
+    }
+}
 
 .block-1 {
     position: relative;
@@ -202,6 +193,14 @@ summary {
     transition: all 1s ease;
 }
 
+h1 {
+    font-size: 5.5rem;
+    line-height: 6.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
 .buy-try {
     width: 580px;
     margin-bottom: 187px;
@@ -211,15 +210,18 @@ summary {
 @media screen and (max-width: 1199px) {
     .buy-try {
         width: 100%;
-        margin-bottom: 80px;
+        margin-bottom: 65px;
         margin-right: 0px;
     }
     .buy-try__buttons {
         display: flex;
         justify-content: space-evenly;
     }
-    .video {
-        margin: 0 auto 50px;
+}
+
+@media screen and (max-width: 520px) {
+    .buy-try {
+        margin-bottom: 30px;
     }
 }
 
@@ -228,6 +230,21 @@ summary {
     line-height: 3.5rem;
     font-weight: 400;
     color: #ffffff;
+}
+
+@media screen and (max-width: 710px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    h1 {
+        text-align: center;
+    }
+    .buy-try__text {
+        text-align: center;
+    }
 }
 
 .buy-now {
@@ -267,11 +284,27 @@ summary {
     transform: scale(1.04);
 }
 
+.video-container {
+    width: 60rem;
+    height: 32rem;
+    margin-top: 10px;
+}
 
-@media screen and (max-width: 670px) {
-    .ifryou {
-    width: 400px;
-    height: 250px;
+.promo-video {
+    width: 100%;
+    height: 106%;
+}
+
+@media screen and (max-width: 420px) {
+    .video-container {
+        max-height: 32rem;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .video-container {
+        margin: 0 auto 50px;
     }
 }
 
@@ -842,8 +875,8 @@ h3 {
 }
 
 .block-7__textarea {
-    width: 60rem;
-    min-width: 60rem;
+    width: 100%;
+    max-width: 60rem;
     height: 15rem;
     min-height: 15rem;
     margin-bottom: 2rem;
@@ -864,7 +897,6 @@ h3 {
     }
 
     .block-7__textarea {
-        width: 100%;
         margin-right: 2rem;
         margin-left: 2rem;
     }
