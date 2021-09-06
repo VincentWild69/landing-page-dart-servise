@@ -74,7 +74,7 @@ img {
 
 .block-1 {
     position: relative;
-    background-image: url(../images/back_top.png);
+    background-image: url(assets/img/back_top.png);
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -164,6 +164,7 @@ header {
     .section-top {
         flex-wrap: wrap;
         margin-top: 60px;
+        margin-bottom: 0;
     }
 }
 
@@ -273,20 +274,28 @@ h1 {
 }
 
 .section-white {
-    margin-top: 99px;
-    margin-bottom: 10rem;
+    margin-top: 10rem;
+    margin-bottom: 9rem;
+}
+
+@media screen and (max-width: 650px) {
+    .section-white {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }   
 }
 
 .block-inf {
     text-align: center;
     width: 558px;
     margin: 0 auto;
-    margin-bottom: 97px;
+    margin-bottom: 9.7rem;
 }
 
 @media screen and (max-width: 767px) {
     .block-inf {
         width: 100%;
+        margin-bottom: 47px;
     }
 }
 
@@ -324,6 +333,7 @@ h3 {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 40px;
     }
 }
 
@@ -402,7 +412,6 @@ h3 {
 
 .block-3 {
     display: flex;
-    margin-bottom: 10rem;
 }
 
 @media screen and (max-width: 991px) {
@@ -441,11 +450,11 @@ h3 {
     }
 }
 
-/* @media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) {
     .block-3__item {
         padding: 15px;
     }
-} */
+}
 
 .block-3__info {
     width: 12rem;
@@ -465,9 +474,7 @@ h3 {
     }
 
     .block-3__img {
-        max-width: 100%;
         width: 70%;
-        height: 70%;
     }
 }
 
@@ -491,13 +498,18 @@ h3 {
 @media screen and (max-width: 767px) {
     .block-inf-services {
         width: 100%;
+        margin-bottom: 35px;
     }
 }
 
 /* Acordeon div */
+.block-4 {
+    margin-bottom: 50px;
+}
+
 .acord {
     width: 800px;
-    margin: 0 auto 5rem auto;
+    margin: 0 auto;
     padding: 2.5rem;
 }
 
@@ -526,7 +538,6 @@ h3 {
 .acord-item__trigger {
     display: block;
     font-size: 1.5rem;
-    line-height: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
     color: #061e37;
@@ -536,7 +547,7 @@ h3 {
 }
 
 .acord-item__trigger::after {
-    content: url(../images/huynushka.png);
+    content: url(assets/icons/huynushka.png);
     display: block;
     position: absolute;
     top: 33%;
@@ -569,9 +580,7 @@ h3 {
 
 .acord__text {
     font-size: 1.5rem;
-    line-height: 2rem;
     font-weight: 400;
-    letter-spacing: 0.03rem;
     color: #061e37;
     margin-left: 2.5rem; 
     
@@ -589,11 +598,11 @@ h3 {
 
 .block-5 {
     position: relative;
-    background-image: url(../images/back_mid.png);
+    background-image: url(assets/img/back_mid.png);
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    margin-bottom: 10rem;
+    padding: 5rem;
 }
 
 .block-5::before {
@@ -624,9 +633,12 @@ h3 {
     margin: 0 auto;
 }
 
+.block-5__slider {
+    margin: 0 auto;
+}
+
 .block-5__button {
     font-size: 1.5rem;
-    line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
     color: #fff;
@@ -636,13 +648,14 @@ h3 {
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.15);
     border-radius: 5px;
     margin-top: 38px;
+    transition: 0.5s ease;
 }
 
 @media screen and (max-width: 991px) {
     .block-5__button {
         margin-bottom: 40px;
     }
-    .block-5__button-p {
+    .block-5__button-wrap {
         display: flex;
         justify-content: center;
     }
@@ -654,6 +667,7 @@ h3 {
     color: rgb(255, 255, 255);
     transition: all 1s ease;
     transform: scale(1.04);
+    transition: 0.5s ease;
 }
 
 .block-5__h {
@@ -663,6 +677,11 @@ h3 {
     color: #fff;
     margin-bottom: 1.9rem;
     margin-top: 13.4rem;
+}
+
+@media screen and (max-width: 991px) {}
+    .block-5__h {
+        margin-top: 35px;
 }
 
 .block-5__text {
@@ -683,11 +702,6 @@ h3 {
     width: 760px;
     height: 564px;
     background-color: #b0bec5;
-}
-
-
-.block-6 {
-    padding-bottom: 9rem;
 }
 
 .block-6__slider {
@@ -797,22 +811,23 @@ h3 {
 }
 
 .block-7__button {
-        width: 13rem;
-        height: 5rem;
-        background-color: #1de9b6;
-        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.15);
-        border-radius: 5px; 
-        color: #fff; 
-        font-size: 1.5rem;
-        line-height: 3rem;
-        font-weight: 500;
-        text-transform: uppercase;
+    width: 13rem;
+    height: 5rem;
+    background-color: #1de9b6;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.15);
+    border-radius: 5px; 
+    color: #fff; 
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.5s ease;
         
 }
     
 .block-7__button:hover {
-        transform: scale(1.05);
-        transition: all 1s ease;
+    transform: scale(1.05);
+    transition: all 0.7s ease;
 }
 
 /* FOOTER begin */
@@ -821,7 +836,7 @@ h3 {
 }
 
 footer {
-    padding: 9.8rem 0 10.8rem 0;
+    padding: 7.8rem 0 5.8rem 0;
 }
 
 footer .menu {
@@ -836,9 +851,10 @@ footer .menu {
 
 .footer-links a:hover {
     color: #c5c5c5;
+    transition: 0.5s ease;
 }
 
-footer .menu__item:nth-child(5) {
+footer .menu__item:last-child{
     margin: 0 0 0 15px;
 }
 
@@ -853,30 +869,22 @@ footer .menu__item:nth-child(5) {
     line-height: 2.5rem;
     font-weight: 400;
     opacity: 0.5;
+    transition: 0.5s ease;
 }
 
 .footer-down-link:hover {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     opacity: 1;
+    transition: 0.5s ease;
 }
 
-.footer-down-link:nth-child(2),
-.footer-down-link:nth-child(3) {
-    margin-left: 4rem;
-    position: relative;
-}
-
-.footer-down-link:nth-child(2)::before,
-.footer-down-link:nth-child(3)::before {
-    content: '';
-    position: absolute;
+.footer-links-decor {
+    margin: 2px 12px;
     height: 0.5rem;
     width: 0.5rem;
     border-radius: 50%;
-    top: 33%;
-    left: -33%;
     background-color: #fff;
-    opacity: 1;
+    display: inline-block;
 }
 
 .footer-social {
@@ -885,5 +893,11 @@ footer .menu__item:nth-child(5) {
 
 .footer-social__link {
     margin-left: 2rem;
+    transition: 0.5s ease;
+}
+
+.footer-social__link:hover {
+    filter: invert(49%) sepia(54%) saturate(411%) hue-rotate(111deg) brightness(91%) contrast(95%);
+    transition: 0.5s ease;
 }
 /* FOOTER end */
