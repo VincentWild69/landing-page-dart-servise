@@ -72,38 +72,112 @@ img {
     }
 }
 
-.block-1 {
-    position: relative;
-    background-image: url(assets/img/back_top.png);
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-}
-
-.block-1::before {
-    content: '';
-    position: absolute;
+.header {
+    position: fixed;
+    z-index: 10;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(-53.0deg, #00b8d4 -11%, #1de9b6 111%);
-    opacity: 0.9;
 }
 
-.container-top {
-    position: relative;
+.header__bg {
+    background: linear-gradient(-90deg, #0db8bb 0%, #16d7c6 50%, #1ae7c0 100%);
 }
 
-header {
+.header__body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5.2rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (max-width: 800px) {
+    .header__body {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+/***/
+.header__burger {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+    }
+}
+
+.header__burger:before,
+.header__burger:after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.4s ease;
+}
+
+.header__burger:before {
+    top: 0;
+}
+
+.header__burger:after {
+    bottom: 0;
+}
+
+.burger-span {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.4s ease;
+}
+
+.header__burger.active .burger-span{
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+    transition: all 0.4s ease;
+}
+
+.header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+    transition: all 0.4s ease;
+}
+/***/
+
+.logo {
+    z-index: 3;
 }
 
 .logo__img {
     width: 180px;
+}
+
+@media screen and (max-width: 800px) {
+    .logo__img {
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .logo__img {
+        width: 150px;
+    }
 }
 
 .menu {
@@ -115,11 +189,35 @@ header {
 
 .menu__item {
     margin: 0 25px 0 25px;
+    text-align: left;
 }
 
 @media screen and (max-width: 991px) {
     .menu__item {
         margin: 0 15px 0 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .menu {
+        position: fixed;
+        display: block;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 260px;
+        background-color: #0db8bb;
+        margin: 0;
+        padding: 40px 10px 10px 10px;
+        transition: 0.5s ease;
+    }
+    .menu__item {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .menu.active {
+        top: 0;
+        transition: 0.5s ease;
     }
 }
 
@@ -145,12 +243,50 @@ header {
     color: #ffffff; 
     background-color: transparent;
     transition: all 0.7s ease;
+    z-index: 3;
 }
 
 .signup-btn:hover {
     background-color: #061e37;
     color: #fff;
     transition: all 1s ease;
+}
+
+@media screen and (max-width: 800px) {
+    .signup-btn {
+        margin-right: 70px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .signup-btn {
+        margin-right: 0;
+    }
+}
+
+
+.block-1 {
+    position: relative;
+    background-image: url(assets/img/back_top.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.block-1::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-53.0deg, #00b8d4 -11%, #1de9b6 111%);
+    opacity: 0.9;
+}
+
+.container-top {
+    position: relative;
 }
 
 .section-top {
@@ -836,7 +972,13 @@ h3 {
 }
 
 footer {
-    padding: 7.8rem 0 5.8rem 0;
+    padding: 2.8rem 0 2.8rem 0;
+}
+
+@media screen and (max-width: 800px) {
+    .footer__navigation {
+        display: none;
+    }
 }
 
 footer .menu {
@@ -846,7 +988,7 @@ footer .menu {
 .footer-links {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5.4rem;
+    margin-bottom: 2.5rem;
 }
 
 .footer-links a:hover {

@@ -7,18 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <link rel="favicon" href="favicon.ico">
+    <script src="script.js" defer></script>
     <title>Dart Servise Manager</title>
 </head>
 
 <body>
-    <div class="container-big block-1">
-        <div class="container container-top">
-            <header>
+    <header class="header">
+        <div class="container-big header__bg">
+            <div class="container header__body">
                 <div class="logo">
                     <img class="logo__img" src="assets/icons/logo2.png" alt="">
                 </div>
-                <nav class="navigation">
-                    <ul class="menu">
+                <nav class="header__navigation">
+                    <ul class="menu header__menu">
                         <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
                         <li class="menu__item"><a href="#service" class="menu__link">Service</a></li>
                         <li class="menu__item"><a href="#extension" class="menu__link">Extension</a></li>
@@ -27,8 +28,16 @@
                     </ul>
                 </nav>
                 <button class="signup-btn">sign up</button>
-            </header> 
-            <section class="section-top">
+                <div class="header__burger">
+                    <span class="burger-span"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container-big block-1">
+        <div class="container container-top">
+            <div class="section-top">
                 <div class="buy-try">
                     <h1>lorem Ipsum Dolor sit amet</h1>
                     <p class="buy-try__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -40,9 +49,9 @@
                 <div class="video-container">
                     <video class="promo-video" src="assets/video/Star-6962.mp4" preload="metadata" controls></video>
                 </div>
-            </section>
+            </div>
         </div>
-    </div>
+    </section>
     
     <section class="container-big" id="service">
         <div class="container section-white">
@@ -251,7 +260,7 @@
                     <div class="logo">
                         <img src="assets/icons/logo2.png" alt="">
                     </div>
-                    <nav class="navigation">
+                    <nav class="footer__navigation">
                         <ul class="menu">
                             <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
                             <li class="menu__item"><a href="#service" class="menu__link">Service</a></li>
