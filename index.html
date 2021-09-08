@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <header class="header">
+    <div class="modal-wrap"></div>
+    <header class="header lock-padding">
         <div class="container-big header__bg">
             <div class="container header__body">
                 <div class="logo">
@@ -27,7 +28,7 @@
                         <li class="menu__item"><a href="#help" class="menu__link">Help</a></li>
                     </ul>
                 </nav>
-                <button class="signup-btn">sign up</button>
+                <a href="#popup-sign" class="popup-link"><button class="signup-btn">sign up</button></a>
                 <div class="header__burger">
                     <span class="burger-span"></span>
                 </div>
@@ -231,18 +232,18 @@
         </div>
         <div class="form-container">
             <form class="block-7__form" action="server">
-                <p class="form-p">
+                <div class="form-div">
                     <input type="text" placeholder="First Name">
                     <input type="text" placeholder="Last Name">
-                </p>
-                <p class="form-p">
+                </div>
+                <div class="form-div">
                     <input type="text" placeholder="Email">
                     <input type="text" placeholder="Phone">
-                </p>
-                <p class="form-p">
+                </div>
+                <div class="form-div">
                     <textarea class="block-7__textarea" placeholder="Message"></textarea>
-                </p>
-                <div class="form-p form-p-last">
+                </div>
+                <div class="form-div">
                     <div>
                         <input type="checkbox" id="rb1" class="block-7__checkbox">
                         <label for="rb1" class="form-span">subscribe to the newsletter</label>
@@ -289,5 +290,29 @@
             </footer>
         </div>
     </div>
+
+    <div id="popup-sign" class="popup">
+        <div class="popup__body">
+            <div class="popup__content popup-content">
+                <a href="##" class="popup-close-btn close-popup">x</a>
+                <div class="popup-content__wrapper">
+                   <form class="sign-form">
+                       <div class="form-div">
+                           <input class="sign-form-email" type="text" placeholder="Your email">
+                       </div>
+                       <div class="form-div">
+                            <input class="sign-form-password" type="text" placeholder="Your password">
+                        </div>
+                    <button class="sign-form-btn">Sign in</button>
+                   </form>
+                   <div class="to-register">
+                    Dont have account? <a href="##" class="to-register__link">Register</a>
+                   </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -21,6 +21,10 @@ body {
     background-color: #fff;
 }
 
+body.lock {
+    overflow: hidden;
+}
+
 ul, li {
 	display: block;
 	padding: 0;
@@ -251,6 +255,101 @@ img {
     color: #fff;
     transition: all 1s ease;
 }
+
+/***popup***/
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.4s ease;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.popup__body {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.popup__content {
+    position: relative;
+    background-color: #a3f3e4;;
+    color: #000;
+    max-width: 800px;
+    padding: 60px;
+    font-size: 2rem;
+    border-radius: 5px;
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #000;
+}
+
+.sign-form {
+    padding: 0 0 30px 0;
+}
+
+.sign-form input[type="text"] {
+    width: 28rem;
+    height: 5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #061e37;
+    border-radius: 5px;
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #061e37;
+}
+
+.sign-form-btn {
+    width: 90px;
+    height: 30px;
+    border: 1.5px solid #061e37;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000; 
+    background-color: #0ae8ca;
+    transition: all 0.5s ease;
+}
+
+.sign-form-btn:hover {
+    background-color: #061e37;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.to-register {
+    font-size: 14px;
+}
+
+.to-register__link {
+    text-decoration: underline;
+}
+
+
+
+
+/******/
 
 @media screen and (max-width: 800px) {
     .signup-btn {
@@ -867,7 +966,6 @@ h3 {
 }
 
 .form-container {
-    display: flex;
     margin: 0 auto;
 }
 
@@ -883,7 +981,7 @@ h3 {
 
 }
 
-.form-p {
+.form-div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -897,7 +995,6 @@ h3 {
     border-radius: 5px;
     padding: 1.5rem;
     font-size: 1.4rem;
-    line-height: 3rem;
     font-weight: 500;
     color: #061e37;
 }
@@ -912,7 +1009,6 @@ h3 {
     border-radius: 5px;
     padding: 1.5rem;
     font-size: 1.4rem;
-    line-height: 3rem;
     font-weight: 500;
     color: #061e37;
 }
@@ -929,7 +1025,7 @@ h3 {
         margin-left: 2rem;
     }
 
-    .form-p-last {
+    .block-7__form div:last-child {
         margin-right: 2rem;
         margin-left: 2rem;
     }
@@ -996,7 +1092,7 @@ footer .menu {
     transition: 0.5s ease;
 }
 
-footer .menu__item:last-child{
+footer .menu__item:last-child {
     margin: 0 0 0 15px;
 }
 
