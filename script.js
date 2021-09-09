@@ -115,12 +115,11 @@ const slide5 = document.querySelector('.block5-slide');
 const slider5ArrowUp = document.querySelector('.block5-slider__arrow-up');
 const slider5ArrowDown = document.querySelector('.block5-slider__arrow-down');
 
-let slidePara5 = slide5.getBoundingClientRect();
-let slideHeight5 = slidePara5.height;
-let slideMoveHeight = 0;
+let slideHeight5 = slide5.offsetHeight;
+let slideMoveDistance = 0;
 
-let activeSlide = 0;
-let slider5Timeout = 500;
+let countSlider5 = 0;
+
 
 slides5cont.style.height = `${slideHeight5 * 2}px`;
 
@@ -130,28 +129,24 @@ slider5ArrowDown.addEventListener('click', slideDown);
 
 
 function slideUp() {
-    let slide1 = slides5[activeSlide];
-    let slide2 = slides5[activeSlide];
-    slideMoveHeight -= slideHeight5;
-    for (slide of slides5) {
-      slide.style.transform = `translateY(${slideMoveHeight}px)`;
+    countSlider5++
+    if (countSlider5 >= slides5.length) {
+      countSlider5 = 0;
     }
-    
-
-    // setTimeout(() => {
-    //   slide1.classList.add('v-hidden');
-    // }, slider5Timeout)
+    for (slide of slides5) {
+      slide.style.transform = `translateY(-${slideHeight5 * countSlider5}px)`;
+    }
 
 
-    // console.log(slide1);
-    // slide1.style.backgroundColor = `#e3e3e3`;
 }
 
 function slideDown() {
-  let slide1 = slides5[activeSlide];
-  let slide2 = slides5[activeSlide];
-  slideMoveHeight += slideHeight5;
-  for (slide of slides5) {
-    slide.style.transform = `translateY(${slideMoveHeight}px)`;
+  countSlider5--
+  if (countSlider5 < 0) {
+    countSlider5 = slides5.length - 1;
   }
+  for (slide of slides5) {
+    slide.style.transform = `translateY(-${slideHeight5 * countSlider5}px)`;
+  }
+
 }
