@@ -108,7 +108,7 @@ document.addEventListener('keydown', function(e) {
   }
 })
 
-/////
+//slider block5
 const slides5 = document.querySelectorAll('.block5-slide');
 const slides5cont = document.querySelector('.block5-slides');
 const slide5 = document.querySelector('.block5-slide');
@@ -123,12 +123,13 @@ let countSlider5 = 0;
 
 slides5cont.style.height = `${slideHeight5 * 2}px`;
 
-slider5ArrowUp.addEventListener('click', slideUp);
-slider5ArrowDown.addEventListener('click', slideDown);
+
+slider5ArrowUp.addEventListener('click', slideUp5);
+slider5ArrowDown.addEventListener('click', slideDown5);
 
 
 
-function slideUp() {
+function slideUp5(func) {
     countSlider5++
     if (countSlider5 >= slides5.length) {
       countSlider5 = 0;
@@ -136,11 +137,9 @@ function slideUp() {
     for (slide of slides5) {
       slide.style.transform = `translateY(-${slideHeight5 * countSlider5}px)`;
     }
-
-
 }
 
-function slideDown() {
+function slideDown5(func) {
   countSlider5--
   if (countSlider5 < 0) {
     countSlider5 = slides5.length - 1;
@@ -148,5 +147,6 @@ function slideDown() {
   for (slide of slides5) {
     slide.style.transform = `translateY(-${slideHeight5 * countSlider5}px)`;
   }
-
 }
+
+//
