@@ -268,3 +268,5 @@ function setMemberArticle (memberId) {
   sliderArticleName.innerText = team[memberId]['name'];
   sliderArticleInfo.innerText = team[memberId]['info'];
 }
+
+console.log('landing page:\n-BEM\n-responsive\n-vertical slider\n-slider with extended capabilities (you can click on portraits)\n-menu-burger\n-modal window on signup button')
