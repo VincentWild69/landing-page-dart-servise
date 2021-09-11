@@ -125,7 +125,7 @@ slider5ArrowUp.addEventListener('click', slideUp5);
 slider5ArrowDown.addEventListener('click', slideDown5);
 
 
-function slideUp5(func) {
+function slideDown5(func) {
     countSlider5++
     if (countSlider5 >= slides5.length) {
       countSlider5 = 0;
@@ -135,7 +135,7 @@ function slideUp5(func) {
     }
 }
 
-function slideDown5(func) {
+function slideUp5(func) {
   countSlider5--
   if (countSlider5 < 0) {
     countSlider5 = slides5.length - 1;
@@ -154,15 +154,52 @@ const slide6Imgs = document.querySelectorAll('.block6-slider__img');
 const slide6ImgMain = document.querySelector('.block6-slider__img_main');
 const slider6ArrowLeft = document.querySelector('.block6-slider__arrow-left');
 const slider6ArrowRight = document.querySelector('.block6-slider__arrow-right');
+const sliderArticleName = document.querySelector('.block6-slider__name');
+const sliderArticleInfo = document.querySelector('.block6-slider__info');
+
 
 let countSlider6 = 1;
 let marginSlide6 = parseInt((getComputedStyle(slide6).marginRight).slice(0, -2)); 
 let moveWidth6 = slide6Main.offsetWidth - marginSlide6 / 2;
+let currentMember = slide6Main.id;
+
+let team = {
+
+  lolita: {
+    name: 'Lolita',
+    info: 'Considered an invitation do introduced sufficient understood instrument it. Of decisively friendship in as collecting at. No affixed be husband ye females brother garrets proceed. Least child who seven happy yet balls young. Bore less when had and john shed hope.',
+  },
+
+  cristian: {
+    name: 'Cristian',
+    info: 'Is we miles ready he might going. Own books built put civil fully blind fanny. Projection appearance at of admiration no. As he totally cousins warrant besides ashamed do. Therefore by applauded acuteness supported affection it.',
+  },
+
+  maya: {
+    name: 'Maya',
+    info: 'Cause dried no solid no an small so still widen. Ten weather evident smiling bed against she examine its. Rendered far opinions two yet moderate sex striking. Sufficient motionless compliment by stimulated assistance at.',
+  },
+
+  ivan: {
+    name: 'Ivan',
+    info: 'On it differed repeated wandered required in. Then girl neat why yet knew rose spot. Moreover property we he kindness greatest be oh striking laughter. In me he at collecting affronting principles apartments. Has visitor law attacks pretend you calling own excited painted.',
+  },
+
+  kattie: {
+    name: 'Kattie',
+    info: 'Little afraid its eat looked now. Very ye lady girl them good me make. It hardly cousin me always. An shortly village is raising we shewing replied. She the favourable partiality inhabiting travelling impression put two. His six are entreaties instrument acceptance unsatiable her.',
+  },
+
+  karl: {
+    name: 'Karl',
+    info: 'In post mean shot ye. There out her child sir his lived. Design at uneasy me season of branch on praise esteem. Abilities discourse believing consisted remaining to no. Mistaken no me denoting dashwood as screened.',
+  }
+}
 
 slider6ArrowLeft.addEventListener('click', prevSlide);
 slider6ArrowRight.addEventListener('click', nextSlide);
 slider6IconAddListener();
-
+setMemberArticle(currentMember);
 
 function nextSlide() {
   countSlider6++
@@ -181,14 +218,17 @@ function nextSlide() {
   }
   slide6Imgs[countSlider6].classList.add('block6-slider__img_main');
   slide6Main = document.querySelector('.block6-slider__icon_main');
+  currentMember = slide6Main.id;
+  setMemberArticle(currentMember);
   slider6IconAddListener();
+
 }
 
 function prevSlide() {
   countSlider6--
   if (countSlider6 < 0) {
     countSlider6 = 0;
-    return
+    return;
   }
   slider6IconRemoveListener();
 
@@ -208,7 +248,10 @@ function prevSlide() {
   }
   slide6Imgs[countSlider6].classList.add('block6-slider__img_main');
   slide6Main = document.querySelector('.block6-slider__icon_main');
+  currentMember = slide6Main.id;
+  setMemberArticle(currentMember);
   slider6IconAddListener();
+
 }
 
 function slider6IconAddListener() {
@@ -219,4 +262,9 @@ function slider6IconAddListener() {
 function slider6IconRemoveListener() {
   if (slide6Main.previousElementSibling) {slide6Main.previousElementSibling.removeEventListener('click', prevSlide);}
   if (slide6Main.nextElementSibling) {slide6Main.nextElementSibling.removeEventListener('click', nextSlide);}
+}
+
+function setMemberArticle (memberId) {
+  sliderArticleName.innerText = team[memberId]['name'];
+  sliderArticleInfo.innerText = team[memberId]['info'];
 }
