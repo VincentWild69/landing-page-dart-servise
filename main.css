@@ -297,6 +297,12 @@ img {
     border-radius: 5px;
 }
 
+@media screen and (max-width: 600px) {
+    .popup__content {
+        padding: 30px;
+    }
+}
+
 .popup-close-btn {
     position: absolute;
     top: 10px;
