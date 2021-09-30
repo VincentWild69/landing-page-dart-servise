@@ -239,6 +239,7 @@ img {
 }
 
 .signup-btn {
+    display: block;
     width: 80px;
     height: 25px;
     border: 1px solid #ffffff;
@@ -249,6 +250,8 @@ img {
     background-color: transparent;
     transition: all 0.7s ease;
     z-index: 3;
+    text-align: center;
+    padding-top: 4px;
 }
 
 .signup-btn:hover {
@@ -1170,6 +1173,7 @@ h3 {
 .slider-links__item:hover {
     filter: invert(49%) sepia(54%) saturate(411%) hue-rotate(111deg) brightness(91%) contrast(95%);
     transition: 0.3s ease;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
@@ -1180,7 +1184,8 @@ h3 {
 
 .slider-links__link {
     color: transparent;
-    font-size: 1.6rem;
+    width: inherit;
+    height: inherit;
 }
 
 .slider-links__twitter {
