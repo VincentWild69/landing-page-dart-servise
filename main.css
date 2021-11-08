@@ -1183,6 +1183,7 @@ h3 {
 }
 
 .slider-links__link {
+    display: block;
     color: transparent;
     width: inherit;
     height: inherit;
